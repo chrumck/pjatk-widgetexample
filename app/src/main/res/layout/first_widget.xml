@@ -35,6 +35,51 @@
         android:textColor="@android:color/white"
         android:textSize="10sp" />
 
+    <Button
+        android:id="@+id/playStartPauseBtn"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/goToPjwstkBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="22dp"
+        android:padding="10dp"
+        android:background="@android:color/black"
+        android:drawableTop="@drawable/ic_play_circle_outline_white_24dp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/playStopBtn"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/goToPjwstkBtn"
+        android:layout_toRightOf="@+id/playStartPauseBtn"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="22dp"
+        android:padding="10dp"
+        android:background="@android:color/black"
+        android:drawableTop="@drawable/ic_stop_white_24dp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/playNextBtn"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/goToPjwstkBtn"
+        android:layout_toRightOf="@+id/playStopBtn"
+        android:layout_toEndOf="@+id/playStopBtn"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="22dp"
+        android:padding="10dp"
+        android:background="@android:color/black"
+        android:drawableTop="@drawable/ic_skip_next_white_24dp"
+        android:textColor="@android:color/white"
+         />
+
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
