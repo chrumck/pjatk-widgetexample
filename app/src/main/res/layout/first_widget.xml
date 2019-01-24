@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6300cc"
+    android:padding="@dimen/widget_margin">
+
+    <Button
+        android:text="Go To PJWSTK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="22dp" />
+
+</RelativeLayout>
