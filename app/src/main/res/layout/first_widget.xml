@@ -36,7 +36,7 @@
         android:textSize="10sp" />
 
     <Button
-        android:id="@+id/playStartPauseBtn"
+        android:id="@+id/startPauseBtn"
         android:layout_width="60dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
@@ -51,11 +51,11 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/playStopBtn"
+        android:id="@+id/stopBtn"
         android:layout_width="60dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
-        android:layout_toRightOf="@+id/playStartPauseBtn"
+        android:layout_toRightOf="@+id/startPauseBtn"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="22dp"
@@ -65,12 +65,12 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/playNextBtn"
+        android:id="@+id/skipBtn"
         android:layout_width="60dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
-        android:layout_toRightOf="@+id/playStopBtn"
-        android:layout_toEndOf="@+id/playStopBtn"
+        android:layout_toRightOf="@+id/stopBtn"
+        android:layout_toEndOf="@+id/stopBtn"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="22dp"

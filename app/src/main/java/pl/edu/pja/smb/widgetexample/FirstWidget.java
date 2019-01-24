@@ -9,12 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.RemoteViews;
 
 /**
@@ -26,7 +23,7 @@ public class FirstWidget extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
-            Log.i("test", "widget numer: " + appWidgetId);
+            Log.i("FirstWidget", "updating widget #: " + appWidgetId);
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
     }
@@ -44,7 +41,7 @@ public class FirstWidget extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        Log.i("test", "Received " + intent.getAction());
+        Log.i("FirstWidget", "Received " + intent.getAction());
 
         if (intent.getAction().equals("goToPjwstk")) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.pja.edu.pl"));
@@ -78,13 +75,28 @@ public class FirstWidget extends AppWidgetProvider {
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.first_widget);
 
-        Intent intent = new Intent("goToPjwstk");
-        PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, 0);
+        Intent goToUrlIntent = new Intent("goToPjwstk");
+        PendingIntent pi = PendingIntent.getBroadcast(context, 0, goToUrlIntent, 0);
         views.setOnClickPendingIntent(R.id.goToPjwstkBtn, pi);
 
-        Intent intent2 = new Intent("setBackground");
-        PendingIntent pi2 = PendingIntent.getBroadcast(context, 0, intent2, 0);
+        Intent setBackgroundIntent = new Intent("setBackground");
+        PendingIntent pi2 = PendingIntent.getBroadcast(context, 0, setBackgroundIntent, 0);
         views.setOnClickPendingIntent(R.id.setBackgroundBtn, pi2);
+
+        Intent startPauseIntent = new Intent(context, MusicService.class);
+        startPauseIntent.setAction(MusicService.ACTION_START_PAUSE);
+        PendingIntent pi3 = PendingIntent.getService(context, 0, startPauseIntent, 0);
+        views.setOnClickPendingIntent(R.id.startPauseBtn, pi3);
+
+        Intent stopIntent = new Intent(context, MusicService.class);
+        stopIntent.setAction(MusicService.ACTION_STOP);
+        PendingIntent pi4 = PendingIntent.getService(context, 0, stopIntent, 0);
+        views.setOnClickPendingIntent(R.id.stopBtn, pi4);
+
+        Intent skipIntent = new Intent(context, MusicService.class);
+        skipIntent.setAction(MusicService.ACTION_SKIP);
+        PendingIntent pi5 = PendingIntent.getService(context, 0, skipIntent, 0);
+        views.setOnClickPendingIntent(R.id.skipBtn, pi5);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int resId = preferences.getInt("background", R.drawable.photo1);
