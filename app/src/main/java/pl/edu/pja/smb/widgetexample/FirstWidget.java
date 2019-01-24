@@ -44,7 +44,7 @@ public class FirstWidget extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        Log.i("test", "Otrzymałem " + intent.getAction());
+        Log.i("test", "Received " + intent.getAction());
 
         if (intent.getAction().equals("goToPjwstk")) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.pja.edu.pl"));
