@@ -11,14 +11,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <service
-            android:name=".MusicService"
+            android:name=".PlayerService"
+            android:enabled="true"
             android:exported="false" />
 
         <receiver android:name=".FirstWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="goToPjwstk" />
-                <action android:name="setBackground" />
+                <action android:name="pl.edu.pja.smb.widgetexample.action.GO_TO_URL" />
+                <action android:name="pl.edu.pja.smb.widgetexample.action.SET_BACKGROUND" />
             </intent-filter>
 
             <meta-data

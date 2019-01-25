@@ -36,8 +36,8 @@
         android:textSize="10sp" />
 
     <Button
-        android:id="@+id/startPauseBtn"
-        android:layout_width="60dp"
+        android:id="@+id/startBtn"
+        android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
         android:layout_alignParentStart="true"
@@ -51,11 +51,25 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/stopBtn"
-        android:layout_width="60dp"
+        android:id="@+id/pauseBtn"
+        android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
-        android:layout_toRightOf="@+id/startPauseBtn"
+        android:layout_toRightOf="@+id/startBtn"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="22dp"
+        android:padding="10dp"
+        android:background="@android:color/black"
+        android:drawableTop="@drawable/ic_pause_circle_outline_white_24dp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/stopBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/goToPjwstkBtn"
+        android:layout_toRightOf="@+id/pauseBtn"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="22dp"
@@ -66,7 +80,7 @@
 
     <Button
         android:id="@+id/skipBtn"
-        android:layout_width="60dp"
+        android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@+id/goToPjwstkBtn"
         android:layout_toRightOf="@+id/stopBtn"
